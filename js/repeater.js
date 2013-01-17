@@ -17,9 +17,10 @@ $(document).ready(function() {
     
     var inputText = $('#txaInput').val();
     var outputText = '';
-    var repeatTimes = $('#inpTimes').val();
+    var repeatTimes = parseInt($('#inpTimes').val());
+    var repeatOffset = parseInt($('#inpOffset').val());
     
-    for(var i = 0; i < repeatTimes; i++) {
+    for(var i = repeatOffset; i < (repeatTimes + repeatOffset); i++) {
       outputText = outputText.concat(inputText.replace(/@@i@@/g, i) + '\n');
     }
     
