@@ -3,7 +3,7 @@ $(document).ready(function() {
   
 	$('#btnExample').click(function() {
     console.log('Click: Example');
-		$('#txaOutput').val('Test');
+		$('#txaInput').val('<Cell RepeatableCondition=\"Satz@@i@@ == \'true\'\">\n\t<Properties />\n</Cell>');
 	})
   
   $('#btnRepeat').click(function() {
