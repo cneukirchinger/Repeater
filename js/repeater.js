@@ -6,6 +6,12 @@ $(document).ready(function() {
 		$('#txaInput').val('<Cell RepeatableCondition=\"Satz@@i@@ == \'true\'\">\n\t<Properties />\n</Cell>');
 	})
   
+  $('#btnClear').click(function() {
+    console.log('Click: Clear');
+		$('#txaInput').val('');
+    $('#txaOutput').val('');
+	})
+  
   $('#btnRepeat').click(function() {
     console.log('Click: Repeat');
     
