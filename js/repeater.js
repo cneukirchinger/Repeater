@@ -10,18 +10,36 @@ $(document).ready(function() {
     console.log('Click: Clear');
 		$('#txaInput').val('');
     $('#txaOutput').val('');
+    $('#txaCustom').val('');
 	})
   
   $('#btnRepeat').click(function() {
     console.log('Click: Repeat');
     
+    var repeatBehavior = $('input:checked').val();
     var inputText = $('#txaInput').val();
     var outputText = '';
-    var repeatTimes = parseInt($('#inpTimes').val());
-    var repeatOffset = parseInt($('#inpOffset').val());
     
-    for(var i = repeatOffset; i <= (repeatTimes + repeatOffset); i++) {
-      outputText = outputText.concat(inputText.replace(/@@i@@/g, i) + '\n');
+    switch(repeatBehavior) {
+      case 'standard':
+        console.log('Behavior: standard');
+        var repeatTimes = parseInt($('#inpTimes').val());
+        var repeatOffset = parseInt($('#inpOffset').val());
+        var Numbers = new Array();
+        for(i = 0; i <= repeatTimes; i++) {
+          Numbers[i] = i + repeatOffset;
+        }
+        break;
+        
+      case 'custom':
+        console.log('Behavior: custom');
+        var Numbers = $('#txaCustom').val().split(/\n|\r/);
+        var repeatTimes = Numbers.length;
+        var repeatOffset = 0;
+    }
+    
+    for(var i = 0; i < Numbers.length; i++) {
+      outputText = outputText.concat(inputText.replace(/@@i@@/g, Numbers[i]) + '\n');
     }
     
     $('#txaOutput').val(outputText);
@@ -29,13 +47,13 @@ $(document).ready(function() {
   
   $('#ordStandard').click(function() {
     console.log('Click: Radio Standard');
-    $('#fdsCustom').hide();
-    $('#fdsStandard').show();
+    $('#fdsCustom').hide('slow');
+    $('#fdsStandard').show('slow');
   });
   
   $('#ordCustom').click(function() {
     console.log('Click: Radio Custom');
-    $('#fdsStandard').hide();
-    $('#fdsCustom').show();
+    $('#fdsStandard').hide('slow');
+    $('#fdsCustom').show('slow');
   });
 })

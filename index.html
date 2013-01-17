@@ -18,31 +18,35 @@
         <label>Input</label>
         <textarea class="input-block-level" rows="10" id="txaInput"></textarea>
       </p>
-	    <p>
-        <fieldset id="fdsChoose">
-          <legend>Choose type of Iteration</legend>
-          <label class="radio">
-            <input type="radio" name="optionsRadios" id="ordStandard" checked>
-            Standard
-          </label>
-          <label class="radio">
-            <input type="radio" name="optionsRadios" id="ordCustom">
-            Custom
-          </label>
-        </fieldset>
-        <fieldset id="fdsStandard">
-          <legend>Standard</legend>
-          <label>How often?</label>
-          <input class="input-mini" type="number" id="inpTimes" value="10"/>
-          <label>Offset</label>
-          <input class="input-mini" type="number" id="inpOffset" value="2"/>
-        </fieldset>
-        <fieldset id="fdsCustom">
-          <legend>Custom</legend>
-          <label>Custom set of numbers</label>
-          <textarea id="txaCustom"></textarea>
-        </fieldset>
-      </p>
+	    <div class="row">
+        <div class="span6">
+          <fieldset id="fdsChoice">
+            <legend>Choose type of Iteration</legend>
+            <label class="radio">
+              <input type="radio" name="optionsRadios" id="ordStandard" value="standard" checked>
+              Standard
+            </label>
+            <label class="radio">
+              <input type="radio" name="optionsRadios" id="ordCustom" value="custom">
+              Custom
+            </label>
+          </fieldset>
+        </div>
+        <div class="span6">
+          <fieldset id="fdsStandard">
+            <legend>Standard</legend>
+            <label>How often?</label>
+            <input class="input-mini" type="number" id="inpTimes" value="10"/>
+            <label>Offset</label>
+            <input class="input-mini" type="number" id="inpOffset" value="2"/>
+          </fieldset>
+          <fieldset id="fdsCustom" style="display:none">
+            <legend>Custom</legend>
+            <label>Custom set of numbers</label>
+            <textarea class="input-block-level" rows="10" id="txaCustom"></textarea>
+          </fieldset>
+        </div>
+      </div>
 	    <p>
         <a id="btnRepeat" class="btn-large btn-primary" href="#"><i class="icon-repeat icon-white"></i> Repeat</a>
       </p>
