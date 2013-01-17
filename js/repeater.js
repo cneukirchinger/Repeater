@@ -20,10 +20,22 @@ $(document).ready(function() {
     var repeatTimes = parseInt($('#inpTimes').val());
     var repeatOffset = parseInt($('#inpOffset').val());
     
-    for(var i = repeatOffset; i < (repeatTimes + repeatOffset); i++) {
+    for(var i = repeatOffset; i <= (repeatTimes + repeatOffset); i++) {
       outputText = outputText.concat(inputText.replace(/@@i@@/g, i) + '\n');
     }
     
     $('#txaOutput').val(outputText);
   })
+  
+  $('#ordStandard').click(function() {
+    console.log('Click: Radio Standard');
+    $('#fdsCustom').hide();
+    $('#fdsStandard').show();
+  });
+  
+  $('#ordCustom').click(function() {
+    console.log('Click: Radio Custom');
+    $('#fdsStandard').hide();
+    $('#fdsCustom').show();
+  });
 })
