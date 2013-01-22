@@ -18,6 +18,7 @@ $(document).ready(function() {
     
     var repeatBehavior = $('input:checked').val();
     var inputText = $('#txaInput').val();
+    var workingLine = '';
     var outputText = '';
     
     switch(repeatBehavior) {
@@ -25,6 +26,7 @@ $(document).ready(function() {
         console.log('Behavior: standard');
         var repeatTimes = parseInt($('#inpTimes').val());
         var repeatOffset = parseInt($('#inpOffset').val());
+        var repeatOffsetJ = parseInt($('#inpOffsetJ').val());
         var Numbers = new Array();
         for(i = 0; i <= repeatTimes; i++) {
           Numbers[i] = i + repeatOffset;
@@ -39,7 +41,9 @@ $(document).ready(function() {
     }
     
     for(var i = 0; i < Numbers.length; i++) {
-      outputText = outputText.concat(inputText.replace(/@@i@@/g, Numbers[i]) + '\n');
+      workingLine = inputText.replace(/@@i@@/g, Numbers[i]);
+      workingLine = workingLine.replace(/@@j@@/g, (Numbers[i] + repeatOffsetJ));
+      outputText = outputText.concat(workingLine + '\n');
     }
     
     $('#txaOutput').val(outputText);
