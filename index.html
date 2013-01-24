@@ -7,18 +7,8 @@
   <body>
   	<div class="container">
   		<h1>Repeater</h1>
-  		<p>Enter some Text in the Box below. <code>@@i@@</code> is the magic item! Define how often the iteration is done. Use the offset setting to start the iteration at a different value.</p>
-      <hr />
-      <p>
-        <a id="btnExample" class="btn-large btn-primary" href="#">Set example input</a>
-        <a id="btnClear" class="btn-large btn-primary" href="#">Clear all fields</a>
-      </p>
-      <hr />
-    	<p>
-        <label>Input</label>
-        <textarea class="input-block-level" rows="10" id="txaInput"></textarea>
-      </p>
-	    <div class="row">
+  		<p>Enter some Text in the Input-Box below. Use <code>@@i@@</code> and <code>@@j@@</code> to define an iterating number. Decide which type of Iteration you want to use. For the standard iteration you can set how often the iteration is done and at which offset the iteration starts. By using the custom iteration you can insert a list of numbers. They should be seperated by newlines.</p>
+      <div class="row">
         <div class="span6">
           <fieldset id="fdsChoice">
             <legend>Choose type of Iteration</legend>
@@ -37,10 +27,10 @@
             <legend>Standard</legend>
             <label>How often?</label>
             <input class="input-mini" type="number" id="inpTimes" value="10"/>
-            <label>Offset von i</label>
-            <input class="input-mini" type="number" id="inpOffset" value="2"/>
-            <label>Offset von j</label>
-            <input class="input-mini" type="number" id="inpOffsetJ" value="2"/>
+            <label>Offset <code>@@i@@</code></label>
+            <input class="input-mini" type="number" id="inpOffset" value="0"/>
+            <label>Offset <code>@@j@@</code></label>
+            <input class="input-mini" type="number" id="inpOffsetJ" value="1"/>
           </fieldset>
           <fieldset id="fdsCustom" style="display:none">
             <legend>Custom</legend>
@@ -49,7 +39,14 @@
           </fieldset>
         </div>
       </div>
+    	<p>
+        <label>Input</label>
+        <textarea class="input-block-level" rows="10" id="txaInput"></textarea>
+      </p>
+      <hr />
 	    <p>
+        <a id="btnExample" class="btn-large btn-primary" href="#">Set example input</a>
+        <a id="btnClear" class="btn-large btn-primary" href="#">Clear all fields</a>
         <a id="btnRepeat" class="btn-large btn-primary" href="#"><i class="icon-repeat icon-white"></i> Repeat</a>
       </p>
 	    <p>
