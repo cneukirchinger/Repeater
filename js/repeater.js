@@ -11,6 +11,7 @@ $(document).ready(function() {
 		$('#txaInput').val('');
     $('#txaOutput').val('');
     $('#txaCustom').val('');
+    $('#divOutput').hide();
 	})
   
   $('#btnRepeat').click(function() {
@@ -47,6 +48,7 @@ $(document).ready(function() {
     }
     
     $('#txaOutput').val(outputText);
+    $('#divOutput').show();
   })
   
   $('#ordStandard').click(function() {

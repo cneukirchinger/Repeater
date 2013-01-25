@@ -23,36 +23,37 @@
           </fieldset>
         </div>
         <div class="span6">
-          <fieldset id="fdsStandard">
-            <legend>Standard</legend>
-            <label>How often?</label>
-            <input class="input-mini" type="number" id="inpTimes" value="10"/>
-            <label>Offset <code>@@i@@</code></label>
-            <input class="input-mini" type="number" id="inpOffset" value="0"/>
-            <label>Offset <code>@@j@@</code></label>
-            <input class="input-mini" type="number" id="inpOffsetJ" value="1"/>
-          </fieldset>
-          <fieldset id="fdsCustom" style="display:none">
-            <legend>Custom</legend>
-            <label>Custom set of numbers</label>
-            <textarea class="input-block-level" rows="10" id="txaCustom"></textarea>
-          </fieldset>
+            <fieldset id="fdsStandard">
+              <legend>Standard</legend>
+              <label>How often?</label>
+              <input class="input-mini span2" type="number" id="inpTimes" value="10"/>
+              <label>Offset <code>@@i@@</code></label>
+              <input class="input-mini span2" type="number" id="inpOffset" value="0"/>
+              <label>Offset <code>@@j@@</code></label>
+              <input class="input-mini span2" type="number" id="inpOffsetJ" value="1"/>
+            </fieldset>
+            <fieldset id="fdsCustom" style="display:none">
+              <legend>Custom</legend>
+              <label>Custom set of numbers</label>
+              <textarea class="input-block-level" rows="10" id="txaCustom"></textarea>
+            </fieldset>
         </div>
       </div>
-    	<p>
+    	<div>
         <label>Input</label>
-        <textarea class="input-block-level" rows="10" id="txaInput"></textarea>
-      </p>
+        <textarea class="input-block-level" rows="5" id="txaInput"></textarea>
+      </div>
       <hr />
-	    <p>
-        <a id="btnExample" class="btn-large btn-primary" href="#">Set example input</a>
-        <a id="btnClear" class="btn-large btn-primary" href="#">Clear all fields</a>
+	    <div>
+        <a id="btnExample" class="btn-large" href="#">Set example input</a>
+        <a id="btnClear" class="btn-large" href="#">Clear all fields</a>
         <a id="btnRepeat" class="btn-large btn-primary" href="#"><i class="icon-repeat icon-white"></i> Repeat</a>
-      </p>
-	    <p>
+      </div>
+      <hr />
+	    <div id="divOutput" style="display:none">
         <label>Output</label>
-        <textarea class="input-block-level" rows="10" id="txaOutput"></textarea>
-      </p>
+        <textarea class="input-block-level" rows="20" id="txaOutput"></textarea>
+      </div>
 	  </div>
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
